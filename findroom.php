@@ -47,28 +47,37 @@ if(!$user->is_loggedin()){
 	
 	
 	<div id="findRoomList">
-		<?php
-			//gets all rooms 
-			$stmt = $db->prepare("
-				SELECT *
-				FROM rooms
-				ORDER BY roomName ASC");
-			$stmt->execute();
-			$numRows = $stmt->rowCount();
 
-			//writes out all the news, one by one in the order they are selected to be displayed by
-			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				if($numRows == 0){
-					echo '<p style="text-align: center;">No rooms avalible!</p>';
-				}else{
-					echo '
-					<div class="room">
-						'. $row['roomName'].'
-					</div>';
-					
+		<table>
+			<thead>
+				
+			</thead>
+			<tbody>
+				<?php
+				//gets all rooms 
+				$stmt = $db->prepare("
+					SELECT *
+					FROM rooms
+					ORDER BY roomName ASC");
+				$stmt->execute();
+				$numRows = $stmt->rowCount();
+
+				//writes out all the news, one by one in the order they are selected to be displayed by
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+					if($numRows == 0){
+						echo '<p style="text-align: center;">No rooms avalible!</p>';
+					}else{
+						echo '
+						<tr>
+							<td><b>'. $row['roomName'].'</b></td>
+						</tr>';
+						
+					}
 				}
-			}
-		?>
+			?>
+			</tbody>
+		</table>
 	</div>
 
 	<script>

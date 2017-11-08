@@ -52,13 +52,20 @@ table{
 	padding: 0 2% 0 2%;
 	width: 100%;
 }
+
 thead{
 	color: #7f8c8d;
 	font-size: 0.5em;
 }
+
 tbody{
 	color: #3498db;
 }
+
+tr{
+
+}
+
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
 @media screen and (min-width: 1024px){
 /*Style*/

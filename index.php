@@ -72,9 +72,9 @@ if(!$user->is_loggedin()){
 						}else{
 							echo '
 							<tr>
-								<td>'. $row['roomName'].'</td>
-								<td>'. $row['dayBooked'].'</td>
-								<td>'. $row['bookedFrom'].'-'. $row['bookedTo'].'</td>
+								<td><b>'. $row['roomName'].'</b></td>
+								<td><b>'. $row['dayBooked'].'</b></td>
+								<td><b>'. $row['bookedFrom'].'-'. $row['bookedTo'].'</b></td>
 							</tr>';
 							
 						}

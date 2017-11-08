@@ -1,7 +1,9 @@
 #logo{
 	position: absolute;
 	top: 2%;
-	left: 30%;
+	display: block;
+	width: 100%;
+	text-align: center;
 	color: #3498db;
 	box-sizing: border-box;
 	padding: 0.5%;

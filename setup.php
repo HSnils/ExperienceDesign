@@ -40,11 +40,35 @@ $query =
 	);
 
 	CREATE TABLE IF NOT EXISTS rooms(
-		
+		roomName varchar(4) PRIMARY KEY
 	);
 
 	CREATE TABLE IF NOT EXISTS bookings(
+		bookingID INT AUTO_INCREMENT PRIMARY KEY,
+		roomName varchar(4),
+		dayBooked DATE,
+		bookedFrom time,
+		bookedTo time,
+		username varchar(30),
 
+		CONSTRAINT `FK_roomName` FOREIGN KEY (`roomName`) 
+		REFERENCES `rooms`(`roomName`) 
+		ON DELETE CASCADE ON UPDATE CASCADE,
+
+		CONSTRAINT `FK_username` FOREIGN KEY (`username`) 
+		REFERENCES `users`(`username`) 
+		ON DELETE CASCADE ON UPDATE CASCADE
+	);
+
+	CREATE TABLE IF NOT EXISTS isUserThere(
+		bookingID INT,
+		isUserHere boolean,
+
+		PRIMARY KEY (bookingID, isUserHere),
+
+		CONSTRAINT FK_booking FOREIGN KEY (bookingID)
+		REFERENCES bookings(bookingID)
+		ON DELETE CASCADE ON UPDATE CASCADE
 	);
 	"
 ;
@@ -68,7 +92,20 @@ $query =
 	INSERT INTO users (username, bdate, pw)
 	VALUES ('admin', '2017-01-01', '$2y$10$.SmmhnJtIQxGRvuD59.JY.vJH2sClwNVKz3wwge2sC4DLXtdEFUoS');
 	
-	
+	INSERT INTO rooms (roomName)
+	VALUES ('A210');
+
+	INSERT INTO rooms (roomName)
+	VALUES ('B210');
+
+	INSERT INTO rooms (roomName)
+	VALUES ('E210');
+
+	INSERT INTO rooms (roomName)
+	VALUES ('C210');
+
+	INSERT INTO bookings (roomName, dayBooked, username)
+	VALUES ('A210', '2017-01-01', 'Henrik');
 	";
 if ($db->exec($query)===false){
 	die('Can not INSERT INTO tables:' . $db->errorInfo()[2]);

@@ -2,13 +2,12 @@
 	position: absolute;
 	top: 2%;
 	display: block;
-	width: 100%;
 	text-align: center;
+	width: 100%;
 	color: #3498db;
 	box-sizing: border-box;
 	padding: 0.5%;
 	margin: 0 1% 0 0;
-	float: left;
 	z-index: 100;
 }
 

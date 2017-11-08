@@ -104,6 +104,9 @@ $query =
 	INSERT INTO rooms (roomName)
 	VALUES ('C210');
 
+	INSERT INTO rooms (roomName)
+	VALUES ('C211');
+
 	INSERT INTO bookings (roomName, dayBooked, username)
 	VALUES ('A210', '2017-01-01', 'Henrik');
 	";

@@ -37,7 +37,7 @@ if(!$user->is_loggedin()){
 	<!--Menu-->
 	
 	<header>
-        <h3 id="logo" href="index.php">NTNU booking</h3>
+        <h3 id="logo" href="index.php">Find Room</h3>
         <a id="logout" href="logout.php?logout=true">LOG OUT</a>
 		<a id="profile" href="profile.php"> <?php echo $printableUsername ?></a>
 	</header>
@@ -45,48 +45,41 @@ if(!$user->is_loggedin()){
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>
     </div>
 	
-	<div>
-		<h2>My bookings</h2>
+	
+	<div id="findRoomList">
+
 		<table>
 			<thead>
-				<td>Room</td>
-				<td>Date</td>
-				<td>Time</td>
+				
 			</thead>
 			<tbody>
 				<?php
-					//gets all rooms 
-					$stmt = $db->prepare("
-						SELECT *
-						FROM bookings
-						WHERE username = '$userID'
-						ORDER BY roomName ASC");
-					$stmt->execute();
-					$numRows = $stmt->rowCount();
+				//gets all rooms 
+				$stmt = $db->prepare("
+					SELECT *
+					FROM rooms
+					ORDER BY roomName ASC");
+				$stmt->execute();
+				$numRows = $stmt->rowCount();
 
-					//writes out all the news, one by one in the order they are selected to be displayed by
-					while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				//writes out all the news, one by one in the order they are selected to be displayed by
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
-						if($numRows == 0){
-							echo '<p style="text-align: center;">No rooms avalible!</p>';
-						}else{
-							echo '
-							<tr>
-								<td><b>'. $row['roomName'].'</b></td>
-								<td><b>'. $row['dayBooked'].'</b></td>
-								<td><b>'. $row['bookedFrom'].'-'. $row['bookedTo'].'</b></td>
-							</tr>';
-							
-						}
+					if($numRows == 0){
+						echo '<p style="text-align: center;">No rooms avalible!</p>';
+					}else{
+						echo '
+						<tr>
+							<td><b>'. $row['roomName'].'</b></td>
+						</tr>';
+						
 					}
-				?>
+				}
+			?>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="linkbox">
-		<a class="linkbutton" href="findroom.php">FIND ROOM </a>
-	</div>
 	<script>
 	
 	function allCaps(a){

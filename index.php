@@ -17,12 +17,11 @@ if(!$user->is_loggedin()){
 	echo "<meta http-equiv='refresh' content='0'>";
 }*/
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Jquery and UI-->
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
@@ -36,16 +35,16 @@ if(!$user->is_loggedin()){
 </head>
 <body>
 	<!--Menu-->
-	<a id="logo" href="index.php">GROUP ROOM BOOKING</a>
-	<header>
-		<a id="createnews" href="createnews.php">CREATE ARTICLE</a>
-		<a id="logout" href="logout.php?logout=true">LOG OUT</a>
-		<a id="profile" href="profile.php">WELCOME, <?php echo $printableUsername ?></a>
-	</header>
 	
-	<h1>My bookings</h1>
-	<div id="main">
-		
+	<header>
+        <h3 id="logo" href="index.php">NTNU booking</h3>
+	</header>
+    <div id="main">
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>
+    </div>
+	
+	<div>
+		<h2>My bookings</h2>
 	</div>
 	
 	<script>

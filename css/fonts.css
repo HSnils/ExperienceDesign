@@ -10,3 +10,6 @@ body{
 header{
 	color: blue;
 }
+h1,h2{
+	text-align: center;
+}

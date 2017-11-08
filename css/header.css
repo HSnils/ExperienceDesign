@@ -1,12 +1,12 @@
 #logo{
 	position: absolute;
 	top: 2%;
-	left: 55%;
+	left: 30%;
 	color: #f7f7f7;
 	box-sizing: border-box;
 	padding: 0.5%;
 	margin: 0 1% 0 0;
-	float: none;
+	float: left;
 	z-index: 100;
 }
 

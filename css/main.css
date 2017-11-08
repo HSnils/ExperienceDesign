@@ -2,6 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color: #f7f7f7;
+	width: auto;
 }
 
 h1{
@@ -49,6 +50,9 @@ h1{
 .floatR{
 	float: right;
 }
+.bigsize{
+	max-width: 767px;
+}
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
 @media screen and (min-width: 1024px){
 /*Style*/
@@ -60,6 +64,6 @@ h1{
 }
 
 /*### Smartphones (portrait and landscape)(small)### */
-@media screen and (min-width : 0px) and (max-width : 767px){
+@media screen and (min-width : 360px) and (max-width : 640px){
 /*Style*/
 }

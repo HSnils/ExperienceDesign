@@ -47,10 +47,46 @@ if(!$user->is_loggedin()){
 	
 	<div>
 		<h2>My bookings</h2>
+		<table>
+			<thead>
+				<td>Room</td>
+				<td>Date</td>
+				<td>Time</td>
+			</thead>
+			<tbody>
+				<?php
+					//gets all rooms 
+					$stmt = $db->prepare("
+						SELECT *
+						FROM bookings
+						WHERE username = '$userID'
+						ORDER BY roomName ASC");
+					$stmt->execute();
+					$numRows = $stmt->rowCount();
+
+					//writes out all the news, one by one in the order they are selected to be displayed by
+					while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+						if($numRows == 0){
+							echo '<p style="text-align: center;">No rooms avalible!</p>';
+						}else{
+							echo '
+							<tr>
+								<td>'. $row['roomName'].'</td>
+								<td>'. $row['dayBooked'].'</td>
+								<td>'. $row['bookedFrom'].'-'. $row['bookedTo'].'</td>
+							</tr>';
+							
+						}
+					}
+				?>
+			</tbody>
+		</table>
 	</div>
 
-	<a class="linkbutton" href="findroom.php">FIND ROOM </a>
-	
+	<div class="linkbox">
+		<a class="linkbutton" href="findroom.php">FIND ROOM </a>
+	</div>
 	<script>
 	
 	function allCaps(a){

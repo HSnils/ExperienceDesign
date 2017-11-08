@@ -21,7 +21,7 @@ if(!$user->is_loggedin()){
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Jquery and UI-->
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
@@ -37,16 +37,40 @@ if(!$user->is_loggedin()){
 	<!--Menu-->
 	
 	<header>
-        <h3 id="logo" href="index.php">NTNU booking</h3>
+        <h3 id="logo" href="index.php">Find Room</h3>
+        <a id="logout" href="logout.php?logout=true">LOG OUT</a>
+		<a id="profile" href="profile.php"> <?php echo $printableUsername ?></a>
 	</header>
     <div id="main">
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>
     </div>
 	
-	<div id="main">
-		<h2>My bookings</h2>
-	</div>
 	
+	<div id="findRoomList">
+		<?php
+			//gets all rooms 
+			$stmt = $db->prepare("
+				SELECT *
+				FROM rooms
+				ORDER BY roomName ASC");
+			$stmt->execute();
+			$numRows = $stmt->rowCount();
+
+			//writes out all the news, one by one in the order they are selected to be displayed by
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				if($numRows == 0){
+					echo '<p style="text-align: center;">No rooms avalible!</p>';
+				}else{
+					echo '
+					<div class="room">
+						'. $row['roomName'].'
+					</div>';
+					
+				}
+			}
+		?>
+	</div>
+
 	<script>
 	
 	function allCaps(a){

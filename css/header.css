@@ -1,0 +1,75 @@
+#logo{
+	position: absolute;
+	top: 1%;
+	left: 1%;
+	color: #f7f7f7;
+	box-sizing: border-box;
+	padding: 0.5%;
+	margin: 0 1% 0 0;
+	float: right;
+	background-color: #e2b666;
+	z-index: 100;
+}
+
+header{
+	position: absolute;
+	top: 1%;
+	width: 100%;
+	
+}
+
+header a{
+	color: #f7f7f7;
+	box-sizing: border-box;
+	padding: 0.5%;
+	display: inline-block;
+	margin: 0 1% 0 0;
+	float: right;
+}
+
+header a:nth-child(1){
+	margin: 0 1.5% 0 4%;
+	background-color: #9cdb7a;
+}
+
+header a:nth-child(2){
+	background-color: #e26666;
+}
+
+header a:nth-child(3){
+	background-color: #85aae5;
+}
+
+#logout, #profile, #createnews, #logo, .adminbutton{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+#logout:hover{
+	background-color: #a54a4a;
+}
+
+#profile:hover{
+	background-color: #7290c1;
+}
+
+.adminbutton:hover{
+	background-color: #7290c1;
+}
+
+#createnews:hover{
+	background-color: #7daf62;
+}
+
+#logo:hover{
+	background-color: #bf9956; 
+}
+
+.adminbutton{
+	position: absolute;
+	right: 1em;
+	box-sizing: border-box;
+	padding: 0.5%;
+	background-color: #89aae2;
+}

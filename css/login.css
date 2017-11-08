@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #f7f7f7;
+}
+
+h1{
+	text-align: center;
+}
+#main{
+	margin-top: 5%;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 40%;
+	padding-right: 40%;
+
+}
+.container{
+	box-sizing: border-box;
+	width: 100%;
+	color: black;
+	border: 2px solid lightblue;
+	padding: 5%;
+}
+
+.container input:nth-child(1n+2) {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 1% 0 1% 0;
+	padding: 4%;
+}
+
+.buttonclass{
+	width: 48%;
+	padding: 3%;
+	margin-top: 10%;
+}
+.right{
+ float:right;
+}
+
+.left{
+	float:left;
+}
+
+#usernameError,#passError{
+	color: red;
+}

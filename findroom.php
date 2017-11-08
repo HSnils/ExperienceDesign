@@ -17,7 +17,7 @@ if(!$user->is_loggedin()){
 	echo "<meta http-equiv='refresh' content='0'>";
 }*/
 
-
+//booking of rooms
 if(isset($_POST['submit'])){
 	
 	//Puts username into variables for use in SQL statement
@@ -26,6 +26,7 @@ if(isset($_POST['submit'])){
 	$timeTo = htmlentities($_POST['timeTo']);
 	$room = htmlentities($_POST['room']);
 
+	//puts values into statement
 	$stmt = $db->prepare("
 		INSERT INTO bookings(roomName, dayBooked, bookedFrom, bookedTo, username)
 		VALUES('$room', '$dayBooked', '$timeFrom:02', '$timeTo:02', '$userID')
@@ -33,6 +34,7 @@ if(isset($_POST['submit'])){
 
 	$stmt->execute();
 	
+	//redirects user to homepage
 	$user->redirect('index.php');
 	
 }
@@ -82,7 +84,7 @@ if(isset($_POST['submit'])){
 			$stmt->execute();
 			$numRows = $stmt->rowCount();
 
-			//writes out all the news, one by one in the order they are selected to be displayed by
+			//writes out all the rooms
 			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
 				if($numRows == 0){

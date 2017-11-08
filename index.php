@@ -64,12 +64,13 @@ if(!$user->is_loggedin()){
 					$stmt->execute();
 					$numRows = $stmt->rowCount();
 
-					//writes out all the news, one by one in the order they are selected to be displayed by
+					//writes out all the rooms into tablerows etc
 					while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
 						if($numRows == 0){
 							echo '<p style="text-align: center;">No rooms avalible!</p>';
 						}else{
+							//using substr on the booking time to take away seconds
 							echo '
 							<tr>
 								<td><b>'. $row['roomName'].'</b></td>

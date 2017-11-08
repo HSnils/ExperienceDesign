@@ -16,6 +16,26 @@ if(!$user->is_loggedin()){
 /*function refresh(){
 	echo "<meta http-equiv='refresh' content='0'>";
 }*/
+
+
+if(isset($_POST['submit'])){
+	
+	//Puts username into variables for use in SQL statement
+	$dayBooked =htmlentities($_POST['date']);
+	$timeFrom = htmlentities($_POST['timeFrom']);
+	$timeTo = htmlentities($_POST['timeTo']);
+	$room = htmlentities($_POST['room']);
+
+	$stmt = $db->prepare("
+		INSERT INTO bookings(roomName, dayBooked, bookedFrom, bookedTo, username)
+		VALUES('$room', '$dayBooked', '$timeFrom:02', '$timeTo:02', '$userID')
+		");
+
+	$stmt->execute();
+	
+	$user->redirect('index.php');
+	
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,38 +66,70 @@ if(!$user->is_loggedin()){
     </div>
 	
 	
-	<div id="findRoomList">
 
-		<table>
-			<thead>
-				
-			</thead>
-			<tbody>
-				<?php
-				//gets all rooms 
-				$stmt = $db->prepare("
-					SELECT *
-					FROM rooms
-					ORDER BY roomName ASC");
-				$stmt->execute();
-				$numRows = $stmt->rowCount();
 
-				//writes out all the news, one by one in the order they are selected to be displayed by
-				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+	<table>
+		<thead>
+			
+		</thead>
+		<tbody>
+			<?php
+			//gets all rooms 
+			$stmt = $db->prepare("
+				SELECT *
+				FROM rooms
+				ORDER BY roomName ASC");
+			$stmt->execute();
+			$numRows = $stmt->rowCount();
 
-					if($numRows == 0){
-						echo '<p style="text-align: center;">No rooms avalible!</p>';
-					}else{
-						echo '
-						<tr>
-							<td><b>'. $row['roomName'].'</b></td>
-						</tr>';
-						
-					}
+			//writes out all the news, one by one in the order they are selected to be displayed by
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+				if($numRows == 0){
+					echo '<p style="text-align: center;">No rooms avalible!</p>';
+				}else{
+					echo '
+
+					<tr>
+						<td class="roomDistance"> 10m </td>
+						<td><b>'. $row['roomName'].'</b></td>
+						<td class="roomArrow"><b>--></b><td>
+					</tr>';
+					
 				}
-			?>
-			</tbody>
-		</table>
+			}
+		?>
+		</tbody>
+	</table>
+
+	<div id="reserve">
+		<form action="findroom.php" method="post">
+
+			<label for="date">Date</label>
+			<input type="date" name="date" id="date" value="" required>
+			
+			<br>
+			<label for="timeFrom">From</label>
+			<input id="timeFrom" type="time" value="" name="timeFrom" required>
+
+			<label for="timeTo">To</label>
+			<input id="timeTo" type="time" value="" name="timeTo" required>
+
+			<br>
+			
+			<label for="room">Room</label>
+			<input id="room" type="text" value="" name="room" required>
+			
+			<br>
+
+			<label for="regSubmit" hidden> RESERVE </label> 
+			<input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">
+		</form>
+	</div>
+
+
+	<div class="linkbox">
+		<a class="linkbutton">RESERVE FUTURE </a>
 	</div>
 
 	<script>

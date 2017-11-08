@@ -60,7 +60,7 @@ if(!$user->is_loggedin()){
 						SELECT *
 						FROM bookings
 						WHERE username = '$userID'
-						ORDER BY roomName ASC");
+						ORDER BY dayBooked ASC");
 					$stmt->execute();
 					$numRows = $stmt->rowCount();
 
@@ -74,7 +74,7 @@ if(!$user->is_loggedin()){
 							<tr>
 								<td><b>'. $row['roomName'].'</b></td>
 								<td><b>'. $row['dayBooked'].'</b></td>
-								<td><b>'. $row['bookedFrom'].'-'. $row['bookedTo'].'</b></td>
+								<td><b>'. substr($row['bookedFrom'],0,-3).' - '. substr($row['bookedTo'],0,-3).'</b></td>
 							</tr>';
 							
 						}

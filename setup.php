@@ -107,8 +107,8 @@ $query =
 	INSERT INTO rooms (roomName)
 	VALUES ('C211');
 
-	INSERT INTO bookings (roomName, dayBooked, username)
-	VALUES ('A210', '2017-01-01', 'Henrik');
+	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
+	VALUES ('A210', '2017-01-01', '12:15:00', '15:00:00' 'Henrik');
 	";
 if ($db->exec($query)===false){
 	die('Can not INSERT INTO tables:' . $db->errorInfo()[2]);

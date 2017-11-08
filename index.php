@@ -39,7 +39,7 @@ if(!$user->is_loggedin()){
 	<header>
         <h3 id="logo" href="index.php">NTNU booking</h3>
         <a id="logout" href="logout.php?logout=true">LOG OUT</a>
-		<a id="profile" href="profile.php"> <?php echo $printableUsername ?></a>
+		<a id="profile" href="index.php"> <?php echo $printableUsername ?></a>
 	</header>
     <div id="main">
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>

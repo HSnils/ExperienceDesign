@@ -13,8 +13,9 @@ h1{
 #main{
 	width: 100%;
 	box-sizing: border-box;
-	padding-left: 10%;
+	padding-left: 0%;
 	padding-right: 10%;
+	padding-top: 0%;
 }
 
 .newsBox{
@@ -47,4 +48,18 @@ h1{
 
 .floatR{
 	float: right;
+}
+/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
+@media screen and (min-width: 1024px){
+/*Style*/
+}
+
+/*###Tablet(medium)###*/
+@media screen and (min-width : 768px) and (max-width : 1023px){
+/*Style*/
+}
+
+/*### Smartphones (portrait and landscape)(small)### */
+@media screen and (min-width : 0px) and (max-width : 767px){
+/*Style*/
 }

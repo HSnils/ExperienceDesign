@@ -25,6 +25,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Jquery and UI-->
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
@@ -32,12 +33,14 @@
     <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.min.css">
     <script src="jquery-ui/jquery-ui.min.js"></script>
     
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css?<?php echo time(); ?>">
+   	<link rel="stylesheet" href="css/fonts.css?<?php echo time(); ?>">
 </head>
 <body>
+
 	<div id="main">
 		<div class="container">
-			<h1>SIGN IN</h1>
+			<h1>Group room Booking</h1>
 			<form action="login.php" method="post">
 				<?php
 					if(isset($error)){?>
@@ -47,12 +50,13 @@
 				<?php
 					}
 				?>
-				<label for="username">Username</label>
+				<label for="username">USERNAME</label>
 				<input type="text" name="username" id="username" value="" required>
 
 				<br>
+				<br>
 
-				<label for="pass">Password</label>
+				<label for="pass">PASSWORD</label>
 				<input type="password" name="pw" id="pass" value="" required>
 
 				<br>

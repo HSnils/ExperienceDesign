@@ -36,6 +36,8 @@ if(isset($_POST['submit'])){
 <html lang="en">
   <head>
     <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Jquery and UI-->
     <script src="jquery-ui/external/jquery/jquery.js"></script>
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
@@ -43,7 +45,8 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.min.css">
     <script src="jquery-ui/jquery-ui.min.js"></script>
     
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css?<?php echo time(); ?>">
+   	<link rel="stylesheet" href="css/fonts.css?<?php echo time(); ?>">
 </head>
 <body>
 	<div id="main">
@@ -74,7 +77,7 @@ if(isset($_POST['submit'])){
 			<br>
 
 			<label for="regSubmit" hidden> Submit </label> 
-			<input id="regSubmit" type="submit" name="submit" value="Create account">
+			<input class="buttonclass" id="regSubmit" type="submit" name="submit" value="Create account">
 		</form>
 	</div>
 	</div>

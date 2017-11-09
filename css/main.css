@@ -115,19 +115,24 @@ input, select {
     width: 100%;
 }
 
-.roomArrow {
-    background-image: url(../img/arrow-right.svg);
-    background-size: cover;
-    width: 20px;
-    height: 20px;
-}
-
-.goTo {
-    background-image: url(../img/arrow-right.svg);
+.icon {
     background-size: cover;
     width: 20px;
     height: 20px;
     display: block;
+}
+
+.roomArrow {
+    background-image: url(../img/arrow-right.svg);
+}
+
+/* btns and stuff */
+.cancel {
+    background-image: url(../img/x.svg);
+}
+
+.goTo {
+    background-image: url(../img/arrow-right.svg);
 }
 
 .linkbox{

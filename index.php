@@ -1,5 +1,7 @@
-<?php require_once('partials/phphead.php');
-require_once('partials/header.php'); ?>
+<?php 
+require_once('partials/phphead.php');
+require_once('partials/header.php'); 
+?>
 
     <div id="main">
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>

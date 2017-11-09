@@ -4,7 +4,7 @@ require_once('partials/header.php');
 ?>
 
 <div id="main">
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
+    <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
 </div>
 
 <div class="bookings">

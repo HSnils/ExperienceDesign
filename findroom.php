@@ -38,8 +38,10 @@
 ?>
 
     <div id="main">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
     </div>
+    <h2>Avalible rooms</h2>
+    <?php echo $dateToday; ?>
     <table>
         <thead>
 
@@ -47,10 +49,24 @@
         <tbody>
             <?php
 			//gets all rooms 
-			$stmt = $db->prepare("
+			/*$stmt = $db->prepare("
 				SELECT *
 				FROM rooms
 				ORDER BY roomName ASC");
+			$stmt->execute();
+			$numRows = $stmt->rowCount();*/
+
+			//gets all unbooked rooms 
+			$stmt = $db->prepare("
+				SELECT *
+				FROM   rooms
+				WHERE  NOT EXISTS
+				  (SELECT *
+				   FROM   bookings
+				   WHERE  bookings.roomName = rooms.roomName
+				   AND dayBooked = '$dateToday');
+				
+				");
 			$stmt->execute();
 			$numRows = $stmt->rowCount();
 
@@ -64,8 +80,8 @@
 
 					<tr>
 						<td class="roomDistance"> 10m </td>
-						<td><b>'. $row['roomName'].'</b></td>
-                                <td><a href="room.php?id='. $row['roomName'].'" class="icon goTo"></a></td>
+						<td><b>'.$row['building'] . $row['room'].'</b></td>
+                                <td><a href="room.php?id='.$row['building'] . $row['room'].'" class="icon goTo"></a></td>
 					</tr>';
 					
 				}

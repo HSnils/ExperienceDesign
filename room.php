@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
 }
 ?>
   <div id="main">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
     </div>
 
 <div class="details">

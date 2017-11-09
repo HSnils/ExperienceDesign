@@ -41,8 +41,10 @@ class user{
 			if($stmt->rowCount() > 0){
 				//checks if the password written is correct
 				if(password_verify($pass, $userRow['pw'])){
-					//puts users name into session
+					//puts users name into session and today's date
 					$_SESSION['username'] = $userRow['username'];
+
+
 					return true;
 				}else{
 					return false;

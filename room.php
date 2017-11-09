@@ -50,22 +50,22 @@ if(isset($_POST['submit'])){
 <div class="details">
     <div class="details-element">
         <p><strong>Building</strong>
-            <?php echo $room['building'] ?>
+            <span><?php echo $room['building'] ?></span>
         </p>
     </div>
     <div class="details-element">
         <p><strong>Room</strong>
-            <?php echo $room['room'] ?>
+            <span><?php echo $room['room'] ?></span>
         </p>
     </div>
     <div class="details-element">
         <p><strong>equipment</strong>
-            <?php echo $room['equipment'] ?>
+            <span><?php echo $room['equipment'] ?></span>
         </p>
     </div>
     <div class="details-element">
         <p><strong>Seats</strong>
-            <?php echo $room['seats'] ?>
+            <span><?php echo $room['seats'] ?></span>
         </p>
     </div>
 </div>

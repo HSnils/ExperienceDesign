@@ -149,6 +149,10 @@ input, select {
     cursor: pointer;
 }
 
+.cancel:hover {
+    background-image: url(../img/x-hover.svg);
+}
+
 .goTo {
     background-image: url(../img/arrow-right.svg);
     float: right;
@@ -205,6 +209,11 @@ input, select {
     margin: 1%;
     padding: 10px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.details-element span {
+    float: right;
+    color: #3498db;
 }
 
 .booking {

@@ -156,7 +156,7 @@ var searchRoom = new Mazemap.Search.SearchController({
     resultsFormat: 'geojson'
 });
 
-function getRoom(query) {
+function getRoom(query) {  
   // Perform a search query using the Search object
   searchRoom.search(query).then( response => {
     var poiId = response.results.features[0].properties.poiId;
@@ -171,6 +171,14 @@ $('#poidata input').on('click', function() {
   var query = $(this).val();
   getRoom(query);
 })
+
+var urlParams = new URLSearchParams(window.location.search);
+$(function() {
+
+  var query = urlParams.get('id');
+  console.log(query);
+  getRoom(query);
+});
 
 
 // Add zoom and rotation controls to the map.

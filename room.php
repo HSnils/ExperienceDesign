@@ -110,4 +110,3 @@ if(isset($_POST['submit'])){
 </div>
 </div>
 <script type="text/javascript" src="mazemap/script.js"></script>
-

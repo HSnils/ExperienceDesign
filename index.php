@@ -40,7 +40,8 @@ require_once('partials/header.php');
 								<td><b>'. $row['dayBooked'].'</b></td>
 								<td><b>'. $row['bookedFrom'].' - '.$row['bookedTo'].'</b>
                                 </td>
-                                <td><a href="room.php?id='. $row['roomName'].'" class="goTo"></a></td>
+                                <td><a href="delete.php?id='. $row['roomName']. '" class="icon cancel"></a></td>
+                                <td><a href="room.php?id='. $row['roomName'].'" class="icon goTo"></a></td>
 							</tr>';
 							
 						}

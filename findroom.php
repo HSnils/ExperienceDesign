@@ -65,7 +65,7 @@
 					<tr>
 						<td class="roomDistance"> 10m </td>
 						<td><b>'. $row['roomName'].'</b></td>
-                                <td><a href="room.php?id='. $row['roomName'].'" class="goTo"></a></td>
+                                <td><a href="room.php?id='. $row['roomName'].'" class="icon goTo"></a></td>
 					</tr>';
 					
 				}

@@ -1,17 +1,4 @@
 <?php
-require_once 'connect.php';
-
-if(!$user->is_loggedin()){
-	$user->redirect('login.php');
-
-}else if($user->is_loggedin()){
-	//gets username from the session
-	$userID = $_SESSION['username'];
-
-	//changes the username to allways appear in uppercase when printed (and using th e variable)
-	$printableUsername = strtoupper($userID);
-}
-
 //Funtion to refresh, uses another type of way than redirect as redirect cant be used in the middle of the code
 /*function refresh(){
 	echo "<meta http-equiv='refresh' content='0'>";
@@ -25,11 +12,12 @@ if(isset($_POST['submit'])){
 	$timeFrom = htmlentities($_POST['timeFrom']);
 	$timeTo = htmlentities($_POST['timeTo']);
 	$room = htmlentities($_POST['room']);
+	$building = htmlentities($_POST['building']);
 
 	//puts values into statement
 	$stmt = $db->prepare("
 		INSERT INTO bookings(roomName, dayBooked, bookedFrom, bookedTo, username)
-		VALUES('$room', '$dayBooked', '$timeFrom:02', '$timeTo:02', '$userID')
+		VALUES('$building$room', '$dayBooked', '$timeFrom', '$timeTo', '$userID')
 		");
 
 	$stmt->execute();
@@ -77,28 +65,32 @@ require_once('partials/header.php') ?>
         </tbody>
     </table>
 
-    <div id="reserve">
+    <div id="reserve" hidden>
+    	<div id="X">X</div>
         <form action="findroom.php" method="post">
 
             <label for="date">Date</label>
-            <input type="date" name="date" id="date" value="" required>
+            <input type="date" name="date" id="date" value="" required >
 
             <label for="timeFrom">From</label>
-            <input id="timeFrom" type="time" value="" name="timeFrom" required>
+            <input id="timeFrom" type="text" value="" name="timeFrom" required max="5" min="5" placeholder="hh:mm">
 
             <label for="timeTo">To</label>
-            <input id="timeTo" type="time" value="" name="timeTo" required>
+            <input id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
 
             <label for="building">Building</label>
-            <select>
-              <option value="volvo">Bygg A</option>
-              <option value="saab">Bygg B</option>
-              <option value="mercedes">Bygg G</option>
-              <option value="audi">Bygg K</option>
+            <select id="building" name="building" required>
+              <option value="A">Bygg A</option>
+              <option value="B">Bygg B</option>
+              <option value="G">Bygg G</option>
+              <option value="K">Bygg K</option>
             </select>
 
             <label for="room">Room</label>
-            <input id="room" type="text" value="" name="room" required>
+            <select id="room" name="room" required>
+				
+            </select>
+            
 
             <label for="regSubmit" hidden> RESERVE </label>
             <input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">
@@ -106,14 +98,30 @@ require_once('partials/header.php') ?>
     </div>
 
 
-    <div class="linkbox">
-        <a class="linkbutton">RESERVE FUTURE </a>
+    <div class="linkbox" id="reserveBox">
+        <a class="linkbutton" id="reservebutton">RESERVE FUTURE </a>
     </div>
 
-    <script>
-        function allCaps(a) {
+    <script type="text/javascript">
+
+    	function allCaps(a) {
             return a.toUpperCase;
         }
+
+    	$('#reservebutton').click(function(){
+			
+			$('#reserveBox').hide();
+			
+			$('#reserve').toggle("slide", {direction: 'down'})
+		});
+
+		$('#X').click(function(){
+			$('#reserve').toggle("slide", {direction: 'down'})
+
+			$('#reserveBox').fadeIn(1000);
+			
+			
+		});
     </script>
     </body>
 

@@ -62,6 +62,9 @@ h1 {
     width: 100%;
 }
 
+#logout{
+	color: #c0392b;
+}
 .bookings {
     margin: 20px 0 30px 0;
     margin-top: 270px;

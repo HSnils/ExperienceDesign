@@ -1,10 +1,10 @@
-<?php require_once('partials/header.php');
-$roomID = $_GET['id'];
+<?php require_once('partials/phphead.php');
+$bookingID = $_GET['id'];
 //gets all rooms
 $stmt = $db->prepare("
 DELETE
 FROM bookings
-WHERE roomName = '$roomID'
+WHERE bookingID = '$bookingID'
 AND username ='$userID'");
 $stmt->execute();
 	

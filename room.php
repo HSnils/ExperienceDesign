@@ -1,8 +1,7 @@
 <?php 
 require_once('partials/phphead.php');
+require_once('partials/header.php');
 
- 
-	
 $roomID = $_GET['id'];
 //gets all rooms
 $stmt = $db->prepare("
@@ -44,17 +43,7 @@ if(isset($_POST['submit'])){
 	header("Refresh:0");
 }
 ?>
-
-<div id="main">
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
-</div>
-
-
-require_once('partials/header.php');
-?>
-
-
-    <div id="main">
+  <div id="main">
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
     </div>
 

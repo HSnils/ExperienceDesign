@@ -30,6 +30,15 @@ nav > * {
     margin: 10px;
 }
 
+nav a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+nav a#logo {
+    font-size: 1.5em;
+}
+
 /* typography */
 
 h1 {
@@ -51,13 +60,11 @@ h1 {
 }
 
 table {
-    padding: 0 2% 0 2%;
     width: 100%;
 }
 
 thead {
     color: #7f8c8d;
-    font-size: 0.7em;
 }
 
 tbody {
@@ -65,27 +72,19 @@ tbody {
 }
 
 tr {
-    margin: 5px 0;
+}
+
+td {
+    padding: 10px 10px;
+}
+
+td.roomDistance {
+    width: 100px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-}
-* {
-    box-sizing: border-box;
-}
-
-.grid {
-    width: 50%;
-    float: left;
-    padding-left: 15px;
-	border-bottom: thin 1px;
-}
-.gridz {
-    width: 50%;
-    float: left;
-    padding-left: 15px;
 }
 
 input, select {
@@ -100,11 +99,6 @@ input, select {
 
 /* elements */
 
-.roomDistance {
-    color: #7f8c8d;
-    font-size: 0.7em;
-}
-
 #reserve {
     background-color: #3498db;
     color: white;
@@ -113,6 +107,7 @@ input, select {
     position: absolute;
     bottom:0;
     width: 100%;
+    max-width: 700px;
 }
 
 .icon {
@@ -133,16 +128,17 @@ input, select {
 
 .goTo {
     background-image: url(../img/arrow-right.svg);
+    float: right;
 }
 
 .linkbox{
-	
 	position: absolute;
 	bottom: 5%;
-	width: 100%;
 	display: block;
 	text-align: center;
 	background-color: #f7f7f7;
+	width: 100%;
+    max-width: 700px;
 }
 
 .linkbutton{

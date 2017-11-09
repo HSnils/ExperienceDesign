@@ -16,15 +16,12 @@ header{
 
 header a{
 	position: absolute;
-	color: #3498db;
 	box-sizing: border-box;
 	padding: 0.5%;
 	display: inline-block;
 	margin: 0 1% 0 0;
 	color: blue;
-	font-size: 0.7em;
 	top: 0px;
-
 }
 
 #logout{

@@ -12,7 +12,6 @@
     <script src="jquery-ui/jquery-ui.min.js"></script>
 
     <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/header.css?<?php echo time(); ?>">
 </head>
 
 <body>

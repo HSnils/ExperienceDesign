@@ -43,10 +43,10 @@ if(isset($_POST['submit'])){
 	header("Refresh:0");
 }
 ?>
-  <div id="main">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
-    </div>
+  <div id="map" class="mazemap">
 
+	</div>
+<div class="findroombox">
 <div class="details">
     <div class="details-element">
         <p><strong>Building</strong>
@@ -108,3 +108,6 @@ if(isset($_POST['submit'])){
     }
     ?>
 </div>
+</div>
+<script type="text/javascript" src="mazemap/script.js"></script>
+

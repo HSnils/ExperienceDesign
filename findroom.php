@@ -37,9 +37,10 @@
 
 ?>
 
-    <div id="main">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
-    </div>
+    <div id="map" class="mazemap">
+
+	</div>
+	<div class="findroombox">
     <h2>Avalible rooms</h2>
     <?php echo $dateToday; ?>
     <table>
@@ -124,7 +125,7 @@
     <div class="linkbox" id="reserveBox">
         <a class="linkbutton" id="reservebutton">RESERVE FUTURE </a>
     </div>
-
+	</div>
     <script type="text/javascript">
 
     	function allCaps(a) {
@@ -146,6 +147,7 @@
 			
 		});
     </script>
+    <script type="text/javascript" src="mazemap/script.js"></script>
     </body>
 
    </html>

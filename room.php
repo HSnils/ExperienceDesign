@@ -44,26 +44,26 @@ if(!$user->is_loggedin()){
     <div id="main">
         <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>
     </div>
-<div>
-    <div class="grid">
-        <h3>Hello</h3>
-        
+    <div class="details">
+        <div class="details-element"><p>Building</p></div>
+        <div class="details-element"><p>Room</p></div>
+        <div class="details-element"><p>Equipment</p></div>
+        <div class="details-element"><p>Seats</p></div>
     </div>
-    <div class="gridz">
-        <h3>Hello</h3>
-        
+   
+    <div class="booking">
+      <!-- php for loop here -->
+      <div class="booking-element">
+          <p>username</p>
+          <p class="date">10:00 - 12:00</p>
+      </div>
+      <div class="booking-element">
+          <p>username</p>
+          <p class="date">12:00 - 14:00</p>
+      </div>
+      <!-- if room availible - button clickable -->
+      <a href="" class="btn">Book now</a>
     </div>
-</div>
-<div>
-    <div class="grid">
-        <h3>Hello</h3>
-        
-    </div>
-    <div class="gridz">
-        <h3>Hello</h3>
-        
-    </div>
-</div>
 
 
 	<div class="linkbox">

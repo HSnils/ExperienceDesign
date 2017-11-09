@@ -1,0 +1,44 @@
+#logo{
+	position: absolute;
+	top: 2%;
+	display: block;
+	text-align: center;
+	width: 100%;
+	color: #3498db;
+	box-sizing: border-box;
+	padding: 0.5%;
+	margin: 0 1% 0 0;
+	z-index: 100;
+}
+
+
+header{
+	top: 1%;
+	width: 100%;
+	
+}
+
+header a{
+	position: absolute;
+	color: #3498db;
+	box-sizing: border-box;
+	padding: 0.5%;
+	display: inline-block;
+	margin: 0 1% 0 0;
+	color: blue;
+	font-size: 0.8em;
+}
+
+#logout{
+	right: 5px;
+}
+#profile{
+	left: 5px;
+}
+
+#logout, #profile, #createnews, #logo{
+	text-decoration: none;
+	color: #3498db;
+	cursor: pointer;
+}
+

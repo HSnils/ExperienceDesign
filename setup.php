@@ -93,31 +93,57 @@ $query =
 	
 	INSERT INTO users (username, bdate, pw)
 	VALUES ('Henrik', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+
+	INSERT INTO users (username, bdate, pw)
+	VALUES ('Anders', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+
+	INSERT INTO users (username, bdate, pw)
+	VALUES ('Mats', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+
+	INSERT INTO users (username, bdate, pw)
+	VALUES ('Cato', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+
+	INSERT INTO users (username, bdate, pw)
+	VALUES ('Espen', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 	
 	INSERT INTO users (username, bdate, pw)
 	VALUES ('admin', '2017-01-01', '$2y$10$.SmmhnJtIQxGRvuD59.JY.vJH2sClwNVKz3wwge2sC4DLXtdEFUoS');
 	
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('A266','A',266,4);
+	VALUES ('A266','A',266, 4);
 
-	INSERT INTO rooms (roomName)
-	VALUES ('A210');
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('A210','A',210, 3);
 
-	INSERT INTO rooms (roomName)
-	VALUES ('B210');
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B266','B',266,4);
 
-	INSERT INTO rooms (roomName)
-	VALUES ('E210');
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B210','B',210, 4);
 
-	INSERT INTO rooms (roomName)
-	VALUES ('C210');
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G266','G',266,4);
 
-	INSERT INTO rooms (roomName)
-	VALUES ('C211');
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K266','K',266, 72);
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
 	VALUES ('A210', '2017-01-01', '12:15', '15:00', 'Henrik');
+
+	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
+	VALUES ('K266', '2017-01-01', '12:15', '15:00', 'Anders');
+
+	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
+	VALUES ('G266', '2017-01-01', '12:15', '15:00', 'Mats');
+	
+	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
+	VALUES ('B210', '2017-01-01', '12:15', '15:00', 'Cato');
+
+	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
+	VALUES ('B266', '2017-01-01', '12:15', '15:00', 'Espen');
 	";
+
+
 if ($db->exec($query)===false){
 	die('Can not INSERT INTO tables:' . $db->errorInfo()[2]);
 }

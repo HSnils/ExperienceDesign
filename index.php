@@ -3,8 +3,8 @@ require_once('partials/phphead.php');
 require_once('partials/header.php'); 
 ?>
 
-<div id="main">
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x400"></a>
+<div id="map" class="mazemap">
+
 </div>
 
 <div class="bookings">
@@ -60,6 +60,7 @@ require_once('partials/header.php');
         return a.toUpperCase;
     }
 </script>
+<script type="text/javascript" src="mazemap/script.js"></script>
 </body>
 
 </html>

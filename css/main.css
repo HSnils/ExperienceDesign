@@ -48,6 +48,21 @@ h1{
 	box-sizing: border-box;
 
 }
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+	border-bottom: thin 1px;
+}
+.gridz {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+}
 
 table{
 	padding: 0 2% 0 2%;

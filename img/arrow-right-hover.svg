@@ -2,17 +2,17 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #f1f9ff;
+        fill: #2699fb;
         opacity: 0.9;
       }
 
       .cls-2 {
-        fill: #2699fb;
+        fill: #f1f9ff;
       }
     </style>
   </defs>
   <g id="Group_18" data-name="Group 18" transform="translate(425 588)">
-    <rect id="Rectangle_67" data-name="Rectangle 67" class="cls-1" width="40" height="40" rx="20" transform="translate(295 527)"/>
+    <path id="Path_233" data-name="Path 233" class="cls-1" d="M20,0A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" transform="translate(295 527)"/>
     <g id="Symbol_24_4" data-name="Symbol 24 – 4" transform="translate(-947 32)">
       <path id="Path_10" data-name="Path 10" class="cls-2" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(1254 507)"/>
     </g>

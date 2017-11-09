@@ -96,11 +96,15 @@ if(isset($_POST['submit'])){
 	FROM bookings
 	WHERE roomName = '$theRoom'
     AND bookedFrom = '$timeNow'");
-    if($check->rowCount() > 0) {
-        echo 'already booked';
+    if($check->rowCount() > 0) { echo
+        '<form action="" method="post">
+            <input type="submit" class="btn disabled" name="submit" value="Room already reserved" disabled>
+        </form>';
+    } else {
+        echo
+        '<form action="" method="post">
+            <input type="submit" class="btn" name="submit" value="Reserve room">
+        </form>';
     }
     ?>
-        <form action="" method="post">
-            <input type="submit" class="btn" name="submit">
-        </form>
 </div>

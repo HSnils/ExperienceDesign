@@ -171,6 +171,14 @@ input, select {
     background-color: #BCE0FD;
 }
 
+.disabled {
+    background-color: #999;
+    color: #333;
+}
+.disabled:hover {
+    background-color: #999;
+    color: #333;}
+
 .details {
     display: flex;
     justify-content: space-between;

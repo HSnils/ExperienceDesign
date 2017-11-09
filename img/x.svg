@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-22058 -19929 31 31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bce0fd;
+      }
+
+      .cls-2 {
+        fill: #2699fb;
+      }
+    </style>
+  </defs>
+  <g id="Group_327" data-name="Group 327" transform="translate(-22162 -20060)">
+    <circle id="Ellipse_282" data-name="Ellipse 282" class="cls-1" cx="15.5" cy="15.5" r="15.5" transform="translate(104 131)"/>
+    <g id="Cancel" transform="translate(-937 -4359)">
+      <path id="Union_3" data-name="Union 3" class="cls-2" d="M7.778,9.192,1.414,15.557,0,14.142,6.364,7.778,0,1.414,1.414,0,7.778,6.364,14.142,0l1.415,1.414L9.192,7.778l6.364,6.364-1.415,1.415Z" transform="translate(1049 4498)"/>
+    </g>
+  </g>
+</svg>

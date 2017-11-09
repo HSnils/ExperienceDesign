@@ -25,8 +25,8 @@ if(isset($_POST['submit'])){
 	
 	//Puts username into variables for use in SQL statement
 	$dayBooked = date("Y/m/d");
-	$timeFrom = date("h").":00";
-	$timeTo = date("h").":00";
+	$timeFrom = date("H").":00";
+	$timeTo = date("H") + 1 .":00";
 	$roomName = $room['roomName'];
 	$building = $room['building'];
 
@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
     ?>
   
    <?php 
-    $timeNow = date("h").":00";
+    $timeNow = date("H").":00";
     $theRoom = $room['roomName'];
     $check = $db->query("
 	SELECT *

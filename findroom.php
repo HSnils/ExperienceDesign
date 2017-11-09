@@ -92,7 +92,7 @@
     </table>
 
     <div id="reserve" hidden>
-    	<div id="X">X</div>
+    	<div class="cancel right" id="X"></div>
         <form action="findroom.php" method="post">
 
             <label for="date">Date</label>
@@ -123,7 +123,7 @@
 
 
     <div class="linkbox" id="reserveBox">
-        <a class="linkbutton" id="reservebutton">RESERVE FUTURE </a>
+        <a class="btn" id="reservebutton">RESERVE FUTURE </a>
     </div>
 	</div>
     <script type="text/javascript">

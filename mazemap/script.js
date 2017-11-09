@@ -174,4 +174,4 @@ $('#poidata input').on('click', function() {
 
 
 // Add zoom and rotation controls to the map.
-map.addControl(new Mazemap.mapboxgl.NavigationControl());
+//map.addControl(new Mazemap.mapboxgl.NavigationControl());

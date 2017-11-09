@@ -38,44 +38,17 @@ if(isset($_POST['submit'])){
 	$user->redirect('index.php');
 	
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Jquery and UI-->
-    <script src="jquery-ui/external/jquery/jquery.js"></script>
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.min.css">
-    <script src="jquery-ui/jquery-ui.min.js"></script>
-    
-    <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/header.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/fonts.css?<?php echo time(); ?>">
-</head>
-<body>
-	<!--Menu-->
-	
-	<header>
-        <h3 id="logo" href="index.php">Find Room</h3>
-        <a id="logout" href="logout.php?logout=true">LOG OUT</a>
-		<a id="profile" href="index.php"> <?php echo $printableUsername ?></a>
-	</header>
+require_once('partials/header.php') ?>
+
     <div id="main">
-        <a href="https://placeholder.com"><img src="http://via.placeholder.com/360x250"></a>
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
     </div>
-	
-	
+    <table>
+        <thead>
 
-
-	<table>
-		<thead>
-			
-		</thead>
-		<tbody>
-			<?php
+        </thead>
+        <tbody>
+            <?php
 			//gets all rooms 
 			$stmt = $db->prepare("
 				SELECT *
@@ -95,50 +68,53 @@ if(isset($_POST['submit'])){
 					<tr>
 						<td class="roomDistance"> 10m </td>
 						<td><b>'. $row['roomName'].'</b></td>
-						<td class="roomArrow"><b>--></b><td>
+                                <td><a href="room.php?id='. $row['roomName'].'" class="goTo"></a></td>
 					</tr>';
 					
 				}
 			}
 		?>
-		</tbody>
-	</table>
+        </tbody>
+    </table>
 
-	<div id="reserve">
-		<form action="findroom.php" method="post">
+    <div id="reserve">
+        <form action="findroom.php" method="post">
 
-			<label for="date">Date</label>
-			<input type="date" name="date" id="date" value="" required>
-			
-			<br>
-			<label for="timeFrom">From</label>
-			<input id="timeFrom" type="time" value="" name="timeFrom" required>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" value="" required>
 
-			<label for="timeTo">To</label>
-			<input id="timeTo" type="time" value="" name="timeTo" required>
+            <label for="timeFrom">From</label>
+            <input id="timeFrom" type="time" value="" name="timeFrom" required>
 
-			<br>
-			
-			<label for="room">Room</label>
-			<input id="room" type="text" value="" name="room" required>
-			
-			<br>
+            <label for="timeTo">To</label>
+            <input id="timeTo" type="time" value="" name="timeTo" required>
 
-			<label for="regSubmit" hidden> RESERVE </label> 
-			<input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">
-		</form>
-	</div>
+            <label for="building">Building</label>
+            <select>
+              <option value="volvo">Bygg A</option>
+              <option value="saab">Bygg B</option>
+              <option value="mercedes">Bygg G</option>
+              <option value="audi">Bygg K</option>
+            </select>
+
+            <label for="room">Room</label>
+            <input id="room" type="text" value="" name="room" required>
+
+            <label for="regSubmit" hidden> RESERVE </label>
+            <input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">
+        </form>
+    </div>
 
 
-	<div class="linkbox">
-		<a class="linkbutton">RESERVE FUTURE </a>
-	</div>
+    <div class="linkbox">
+        <a class="linkbutton">RESERVE FUTURE </a>
+    </div>
 
-	<script>
-	
-	function allCaps(a){
-		return a.toUpperCase;
-	}
-	</script>
-</body>
-</html>
+    <script>
+        function allCaps(a) {
+            return a.toUpperCase;
+        }
+    </script>
+    </body>
+
+    </html>

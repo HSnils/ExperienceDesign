@@ -46,6 +46,7 @@ if(isset($_POST['submit'])){
     <script src="jquery-ui/jquery-ui.min.js"></script>
     
     <link rel="stylesheet" href="css/login.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
    	<link rel="stylesheet" href="css/fonts.css?<?php echo time(); ?>">
 </head>
 <body>

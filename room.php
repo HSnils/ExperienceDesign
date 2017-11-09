@@ -3,7 +3,7 @@ require_once('partials/phphead.php');
 require_once('partials/header.php');
 
 $roomID = $_GET['id'];
-//gets all rooms
+//gets the room
 $stmt = $db->prepare("
 	SELECT *
 	FROM rooms
@@ -25,8 +25,8 @@ if(isset($_POST['submit'])){
 	
 	//Puts username into variables for use in SQL statement
 	$dayBooked = date("Y/m/d");
-	$timeFrom = date("h:i");
-	$timeTo = date("h:i");
+	$timeFrom = date("h").":00";
+	$timeTo = date("h").":00";
 	$roomName = $room['roomName'];
 	$building = $room['building'];
 
@@ -88,7 +88,18 @@ if(isset($_POST['submit'])){
     }
     ?>
   
-        <!-- if room availible - button clickable -->
+   <?php 
+    $timeNow = date("h").":00";
+    $theRoom = $room['roomName'];
+    $check = $db->query("
+	SELECT *
+	FROM bookings
+	WHERE roomName = '$theRoom'
+    AND bookedFrom = '$timeNow'");
+    if($check->rowCount() > 0) {
+        echo 'already booked';
+    }
+    ?>
         <form action="" method="post">
             <input type="submit" class="btn" name="submit">
         </form>

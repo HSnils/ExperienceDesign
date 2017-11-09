@@ -1,21 +1,25 @@
-<?php require_once('partials/header.php');
+<?php 
+require_once('partials/phphead.php');
+
+ 
 	
 $roomID = $_GET['id'];
 //gets all rooms
 $stmt = $db->prepare("
-SELECT *
-FROM rooms
-WHERE roomName = '$roomID'");
+	SELECT *
+	FROM rooms
+	WHERE roomName = '$roomID'");
 $stmt->execute();
 $room = $stmt->fetch(PDO::FETCH_ASSOC);
 // printf($row['Building']);
 
 // get all bookings
 $stmt = $db->prepare("
-SELECT *
-FROM bookings
-WHERE roomName = '$roomID'");
+	SELECT *
+	FROM bookings
+	WHERE roomName = '$roomID'");
 $stmt->execute();
+
 $numRows = $stmt->rowCount();
 //booking of rooms
 if(isset($_POST['submit'])){
@@ -44,6 +48,15 @@ if(isset($_POST['submit'])){
 <div id="main">
     <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
 </div>
+
+
+require_once('partials/header.php');
+?>
+
+
+    <div id="main">
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/600x300"></a>
+    </div>
 
 <div class="details">
     <div class="details-element">
@@ -80,11 +93,12 @@ if(isset($_POST['submit'])){
             echo '
             <div class="booking-element">
                 <p>'. $row['username'].'</p>
-                <p class="date">'. substr($row['bookedFrom'],0,-3).' - '. substr($row['bookedTo'],0,-3).'</p>
+                <p class="date">'. $row['bookedFrom'].' - '. $row['bookedTo'].'</p>
             </div>';
             }
     }
     ?>
+  
         <!-- if room availible - button clickable -->
         <form action="" method="post">
             <input type="submit" class="btn" name="submit">

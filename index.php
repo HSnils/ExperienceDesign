@@ -35,7 +35,7 @@
 							<tr>
 								<td><b>'. $row['roomName'].'</b></td>
 								<td><b>'. $row['dayBooked'].'</b></td>
-								<td><b>'. substr($row['bookedFrom'],0,-3).' - '. substr($row['bookedTo'],0,-3).'</b>
+								<td><b>'. $row['bookedFrom'].' - '.$row['bookedTo'].'</b>
                                 </td>
                                 <td><a href="room.php?id='. $row['roomName'].'" class="goTo"></a></td>
 							</tr>';

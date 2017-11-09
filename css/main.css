@@ -110,6 +110,9 @@ input, select {
     color: white;
     padding: 20px;
     margin: 20px 0;
+    position: absolute;
+    bottom:0;
+    width: 100%;
 }
 
 .roomArrow {
@@ -127,15 +130,36 @@ input, select {
     display: block;
 }
 
+.linkbox{
+	
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	display: block;
+	text-align: center;
+	background-color: #f7f7f7;
+}
+
+.linkbutton{
+	width: 100%;
+	padding: 4%;
+	background-color: #3498db;
+	color: white;
+	border-radius: 50px;
+	text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+}
+
 .btn {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px auto;
-    background-color: #3498db;
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    text-align: center;
+    width: 100%;
+	padding: 4%;
+	background-color: #3498db;
+	color: white;
+	border-radius: 50px;
+	text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
 }
 
 .btn:hover {
@@ -172,3 +196,4 @@ input, select {
 .booking .date {
     margin-left: auto;
 }
+

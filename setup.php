@@ -112,19 +112,70 @@ $query =
 	VALUES ('A266','A',266, 4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('A210','A',210, 3);
+	VALUES ('A269','A',269, 5);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('B266','B',266,4);
+	VALUES ('A270','A',270, 5);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('B210','B',210, 4);
+	VALUES ('A161','A',161, 3);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('G266','G',266,4);
+	VALUES ('A162','A',162, 4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('K266','K',266, 72);
+	VALUES ('A062','A',062, 4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B210','B',210,25);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B211','B',211, 25);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B212','B',212, 25);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B213','B',213, 25);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('B214','B',214, 25);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G219','G',219,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G209','G',209,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G213','G',213,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G219','G',219,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('G208','G',208, 72);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K210','K',210,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K212','K',212,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K214','K',214,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K204','K',204,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K206','K',206,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('K110','K',110,4);
+
+	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
+	VALUES ('A267','A',267,4);
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
 	VALUES ('A210', '2017-01-01', '12:15', '15:00', 'Henrik');

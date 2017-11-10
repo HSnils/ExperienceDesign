@@ -208,6 +208,7 @@ select {
 .disabled {
     background-color: #f5f5f5;
     color: #333;
+    cursor: default;
 }
 
 .disabled:hover {

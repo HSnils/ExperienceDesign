@@ -23,6 +23,7 @@ require_once('partials/header.php');
 						SELECT *
 						FROM bookings
 						WHERE username = '$userID'
+						AND dayBooked >= '$dateToday'
 						ORDER BY dayBooked ASC");
 					$stmt->execute();
 					$numRows = $stmt->rowCount();

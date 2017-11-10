@@ -89,7 +89,6 @@ if ($db->exec($query)===false){
 $query =
 	"
 	
-	
 	INSERT INTO users (username, pw)
 	VALUES ('Henrik', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 
@@ -124,9 +123,6 @@ $query =
 	VALUES ('A162','A',162, 4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('A062','A',062, 4);
-
-	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
 	VALUES ('B210','B',210,25);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
@@ -151,10 +147,10 @@ $query =
 	VALUES ('G213','G',213,4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('G219','G',219,4);
+	VALUES ('G218','G',218,4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('G208','G',208, 72);
+	VALUES ('G208','G',208, 3);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
 	VALUES ('K210','K',210,4);
@@ -178,19 +174,19 @@ $query =
 	VALUES ('A267','A',267,4);
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
-	VALUES ('A210', '2017-01-01', '12:15', '15:00', 'Henrik');
+	VALUES ('A270', '2017-01-01', '12:15', '15:00', 'Henrik');
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
-	VALUES ('K266', '2017-01-01', '12:15', '15:00', 'Anders');
+	VALUES ('K204', '2017-01-01', '12:15', '15:00', 'Anders');
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
-	VALUES ('G266', '2017-01-01', '12:15', '15:00', 'Mats');
+	VALUES ('G219', '2017-01-01', '12:15', '15:00', 'Mats');
 	
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
 	VALUES ('B210', '2017-01-01', '12:15', '15:00', 'Cato');
 
 	INSERT INTO bookings (roomName, dayBooked, bookedFrom, bookedTo, username)
-	VALUES ('B266', '2017-01-01', '12:15', '15:00', 'Espen');
+	VALUES ('B214', '2017-01-01', '12:15', '15:00', 'Espen');
 	";
 
 

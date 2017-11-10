@@ -16,7 +16,8 @@ $room = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt = $db->prepare("
 	SELECT *
 	FROM bookings
-	WHERE roomName = '$roomID'");
+	WHERE roomName = '$roomID'
+    AND dayBooked = '$dateToday'");
 $stmt->execute();
 
 $numRows = $stmt->rowCount();
@@ -96,7 +97,7 @@ if(isset($_POST['submit'])){
 	SELECT *
 	FROM bookings
 	WHERE roomName = '$theRoom'
-    AND bookedFrom = '$timeNow'");
+    AND bookedFrom = '$timeNow' ");
     if($check->rowCount() > 0) { echo
         '<form action="" method="post">
             <input type="submit" class="btn disabled" name="submit" value="Room already reserved" disabled>

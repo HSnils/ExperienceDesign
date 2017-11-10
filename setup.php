@@ -35,7 +35,6 @@ if ($db->exec($query)===false){
 $query = 
 	"CREATE TABLE IF NOT EXISTS users(
 		username varchar(30) PRIMARY KEY,
-		bdate DATE,
 		pw varchar(120)
 	);
 

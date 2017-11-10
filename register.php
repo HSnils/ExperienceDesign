@@ -7,7 +7,6 @@ if(isset($_POST['submit'])){
 	
 	//Puts username into variables for use in SQL statement
 	$username =htmlentities($_POST['uname']);
-	$birthdate = htmlentities($_POST['birdate']);
 	$pw = htmlentities($_POST['pw']);
 					
 	//looks for an exsisting account with the same username
@@ -25,7 +24,7 @@ if(isset($_POST['submit'])){
 		$exsistingAccountError = 'User with the same name allready exsist!';
 	}else{
 		//if it is 0 aka no other users with same username, runs the register function from the user class
-		$user->register($username,$birthdate,$pw);
+		$user->register($username,$pw);
 		//redirects you to the loginpage
 		header("Location: login.php");
 	}
@@ -47,7 +46,6 @@ if(isset($_POST['submit'])){
     
     <link rel="stylesheet" href="css/login.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
-   	<link rel="stylesheet" href="css/fonts.css?<?php echo time(); ?>">
 </head>
 <body>
 	<div id="main">
@@ -58,11 +56,6 @@ if(isset($_POST['submit'])){
 			<label for="username">Username*</label>
 			<input type="text" name="uname" id="username" value="">
 			<div id="usernameError"><?php echo $exsistingAccountError; ?></div>
-
-			<br>
-
-			<label for="bdate">Birth Date*</label>
-			<input id="bdate" type="date" value="" placeholder="yyyy-mm-dd" name="birdate" required>
 
 			<br>
 

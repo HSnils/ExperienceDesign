@@ -9,19 +9,18 @@ class user{
 	}
 	
 	//function for registering, takes the username, bdate and pass variable
-	public function register($username,$bdate,$pass){
+	public function register($username,$pass){
 		try{
 			//hashes password using password_hash
 			$newPassword = password_hash($pass, PASSWORD_DEFAULT);
 			
 			//makes prepared sql statement
 			$stmt = $this->db->prepare(
-			"INSERT INTO users (username, bdate, pw)
-			VALUES(:uname, :ubdate, :upass)");
+			"INSERT INTO users (username, pw)
+			VALUES(:uname, :upass)");
 			
 			//binds the parameters used to the variables
 			$stmt->bindparam(":uname", $username);
-			$stmt->bindparam(":ubdate", $bdate);
 			$stmt->bindparam(":upass", $newPassword);            
 			$stmt->execute(); 
 

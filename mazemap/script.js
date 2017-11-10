@@ -1,3 +1,5 @@
+var mazeMarker;
+
 var map = new Mazemap.Map({
   // container id specified in the HTML
   container: 'map',
@@ -17,6 +19,14 @@ var map = new Mazemap.Map({
 var lnglatPos = {lng: 10.682424100019745, lat: 60.789850652563956};
 
 map.on('load', function() {
+  // Get url parameters and highlight room
+  var urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.get('id')) {
+    var query = urlParams.get('id');
+    getRoom(query);
+  }
+
   // Initialize a Highlighter for POIs
   // Storing the object on the map just makes it easy to access for other things
   map.highlighter = new Mazemap.Highlighter(map, {
@@ -42,7 +52,6 @@ map.on('load', function() {
 
   function getPos(position) {
     lnglatPos = {lng: position.coords.longitude, lat: position.coords.latitude};
-    console.log("showPos: lng: " + lnglatPos.lng + " lat: " + lnglatPos.lat);
 
     blueDot.setLngLat(lnglatPos, {animate: true, duration: 300});
     setTimeout(function() {
@@ -59,7 +68,7 @@ map.on('load', function() {
 });
 
 // define a global
-var mazeMarker;
+
 
 function onMapClick(e) {
   // Clear existing, if any
@@ -109,6 +118,8 @@ function posOverlap(a,b) {
 
 function placePoiMarker(poi) {
   // Remove marker if exists
+
+  console.log(poi);
   clearPoiMarker();
 
   // Get a center point for the POI, because the data can return a polygon instead of just a point sometimes
@@ -156,7 +167,7 @@ var searchRoom = new Mazemap.Search.SearchController({
     resultsFormat: 'geojson'
 });
 
-function getRoom(query) {  
+function getRoom(query) {
   // Perform a search query using the Search object
   searchRoom.search(query).then( response => {
     var poiId = response.results.features[0].properties.poiId;
@@ -166,19 +177,6 @@ function getRoom(query) {
     });
   });
 }
-
-$('#poidata input').on('click', function() {
-  var query = $(this).val();
-  getRoom(query);
-})
-
-var urlParams = new URLSearchParams(window.location.search);
-$(function() {
-
-  var query = urlParams.get('id');
-  console.log(query);
-  getRoom(query);
-});
 
 
 // Add zoom and rotation controls to the map.

@@ -43,6 +43,7 @@ if(isset($_POST['submit'])){
 	header("Refresh:0");
 }
 ?>
+ 
   <div id="map" class="mazemap">
 
 	</div>

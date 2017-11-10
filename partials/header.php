@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.min.css">
     <script src="jquery-ui/jquery-ui.min.js"></script>
+    
+    <!-- timepicker -->
+    <link rel="stylesheet" href="picker/jquery.timepicker.min.css">
+    <script src="picker/jquery.timepicker.min.js"></script>
 
+    <!-- mazemap -->
      <link rel="stylesheet" href="https://api.mazemap.com/js/v2.0.0-beta.5/mazemap.min.css">
     <script type='text/javascript' src='https://api.mazemap.com/js/v2.0.0-beta.5/mazemap.min.js'></script>
-
+    <!-- css -->
     <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
 </head>
 

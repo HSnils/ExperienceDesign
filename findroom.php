@@ -42,7 +42,6 @@
 	</div>
 	<div class="findroombox">
     <h2>Available rooms</h2>
-    <?php echo $dateToday; ?>
     <table>
         <thead>
 

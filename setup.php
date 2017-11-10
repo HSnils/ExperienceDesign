@@ -7,7 +7,7 @@ require_once('dblogon.php');
 
 //using only localhost here, no username, pw or database as it just wants to connect to localhost, not any database at this point
 try{
-	$db = new PDO ("mysql: host='localhost';charset=utf8",'root', '');
+	$db = new PDO("mysql:host=$db_host;dbname=$db_database;charset=utf8",$db_user, $db_pass);
 } catch(PDOException $e){
 	die ("Error(Could not connect): ".$e->getMessage());
 };

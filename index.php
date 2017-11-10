@@ -10,7 +10,7 @@ require_once('partials/header.php');
 <div class="bookings">
     <div>
         <h2>My bookings</h2>
-        <table>
+        <table id="table">
             <thead>
                 <td>Room</td>
                 <td>Date</td>

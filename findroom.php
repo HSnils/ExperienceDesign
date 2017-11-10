@@ -20,8 +20,8 @@
 
         //puts values into statement
         $stmt = $db->prepare("
-            INSERT INTO bookings(roomName, dayBooked, bookedFrom, bookedTo, username)
-            VALUES('$newRoom', '$dayBooked', '$timeFrom', '$timeTo', '$userID')
+            INSERT INTO bookings(roomName, dayBooked, bookedFrom, bookedTo, username, isThere)
+            VALUES('$newRoom', '$dayBooked', '$timeFrom', '$timeTo', '$userID',0)
         ");
 
         $stmt->execute();

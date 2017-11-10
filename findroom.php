@@ -80,7 +80,7 @@
 
 					<tr>
 						<td class="roomDistance"> 10m </td>
-						<td><b>'.$row['building'] . $row['room'].'</b></td>
+						<td class="roomId"><b>'.$row['building'] . $row['room'].'</b></td>
                                 <td><a href="room.php?id='.$row['building'] . $row['room'].'" class="icon goTo"></a></td>
 					</tr>';
 					
@@ -104,7 +104,7 @@
             <input class="picker" id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
 
             <label for="building">Building</label>
-            <select id="buildingSelect" name="buildingSelect" required>
+            <select class="building" id="buildingSelect" name="buildingSelect" required>
             	<option value="">Choose building</option>
 				<option value="A">Building A</option>
 				<option value="B">Building B</option>
@@ -113,7 +113,7 @@
             </select>
 
             <label for="room">Room</label>
-            <input id="room" type="number" value="" name="room" required >
+            <select name="room" id="room" required></select>
 
             <label for="regSubmit" hidden> RESERVE </label>
             <input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">

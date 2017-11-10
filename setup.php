@@ -150,9 +150,6 @@ $query =
 	VALUES ('G218','G',218,4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
-	VALUES ('G208','G',208, 3);
-
-	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
 	VALUES ('K210','K',210,4);
 
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 

@@ -55,7 +55,7 @@
 				ORDER BY roomName ASC");
 			$stmt->execute();
 			$numRows = $stmt->rowCount();*/
-
+			$timeNow = date("H").":00";
 			//gets all unbooked rooms 
 			$stmt = $db->prepare("
 				SELECT *
@@ -64,7 +64,9 @@
 				  (SELECT *
 				   FROM   bookings
 				   WHERE  bookings.roomName = rooms.roomName
-				   AND dayBooked = '$dateToday');
+				   AND dayBooked = '$dateToday'
+				   AND bookedFrom <= '$timeNow'
+				   AND bookedTo >= '$timeNow');
 				
 				");
 			$stmt->execute();

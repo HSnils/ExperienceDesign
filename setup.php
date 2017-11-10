@@ -90,23 +90,23 @@ $query =
 	"
 	
 	
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('Henrik', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+	INSERT INTO users (username, pw)
+	VALUES ('Henrik', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('Anders', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+	INSERT INTO users (username, pw)
+	VALUES ('Anders',  '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('Mats', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+	INSERT INTO users (username, pw)
+	VALUES ('Mats',  '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('Cato', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+	INSERT INTO users (username, pw)
+	VALUES ('Cato',  '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('Espen', '2017-01-01', '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
+	INSERT INTO users (username,  pw)
+	VALUES ('Espen',  '$2y$10$1Aj4qC8CMc3qMjQGQRy1HuKyIlz6v.P0xsjjXnmpm3o61nAW2YgpO');
 	
-	INSERT INTO users (username, bdate, pw)
-	VALUES ('admin', '2017-01-01', '$2y$10$.SmmhnJtIQxGRvuD59.JY.vJH2sClwNVKz3wwge2sC4DLXtdEFUoS');
+	INSERT INTO users (username,  pw)
+	VALUES ('admin',  '$2y$10$.SmmhnJtIQxGRvuD59.JY.vJH2sClwNVKz3wwge2sC4DLXtdEFUoS');
 	
 	INSERT INTO `rooms`(`roomName`, `building`, `room`, `seats`) 
 	VALUES ('A266','A',266, 4);

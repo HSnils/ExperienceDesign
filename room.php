@@ -21,6 +21,9 @@ $stmt = $db->prepare("
 $stmt->execute();
 
 $numRows = $stmt->rowCount();
+
+
+
 //booking of rooms
 if(isset($_POST['submit'])){
 	
@@ -90,24 +93,63 @@ if(isset($_POST['submit'])){
     }
     ?>
   
-   <?php 
+   <?php
     $timeNow = date("H").":00";
+    $timeNowReal = date("H:i");
     $theRoom = $room['roomName'];
-    $check = $db->query("
+    $stmt = $db->query("
 	SELECT *
 	FROM bookings
 	WHERE roomName = '$theRoom'
     AND bookedFrom = '$timeNow' ");
-    if($check->rowCount() > 0) { echo
+    $check = $stmt->fetch(PDO::FETCH_ASSOC);
+    $bookedFrom = $check['bookedFrom'];
+    $bookedTo = $check['bookedTo'];
+    $overdue = substr($check['bookedFrom'], 0, -2).'15';
+    if($timeNowReal >= $overdue && $check['isThere'] == 0 && $check['username'] !== $userID) {
+        echo 'user did not show up, you can book now';
+        $stmt = $db->prepare("
+	DELETE
+	FROM bookings
+	WHERE roomName = '$roomID'
+    AND dayBooked = '$dateToday'
+    AND bookedFrom = '$bookedFrom'
+    AND bookedTo = '$bookedTo' ");
+    $stmt->execute();
+    }
+    if($check['username'] == $userID && $check['isThere'] == 0 && $timeNow == $check['bookedFrom'] ) {
+        echo
+        '<form action="" method="post">
+            <input type="submit" class="btn" name="checkinSub" value="Check in">
+        </form>';
+    } elseif($check['isThere'] == 1 && $check['username'] == $userID) { echo
+        '<form action="" method="post">
+            <input type="submit" class="btn disabled" name="submit" value="You have checked in" disabled>
+        </form>';
+    } elseif($check['isThere'] == 1) { echo
         '<form action="" method="post">
             <input type="submit" class="btn disabled" name="submit" value="Room already reserved" disabled>
         </form>';
-    } else {
+    } elseif($check['isThere'] == 0) {
         echo
         '<form action="" method="post">
             <input type="submit" class="btn" name="submit" value="Reserve room">
         </form>';
+    } else {
+        echo 'fuck you';
     }
+    
+    if(isset($_POST['checkinSub'])){
+    $stmt = $db ->prepare ("
+       UPDATE bookings
+       SET isThere = 1
+	   WHERE roomName = '$roomID'
+       AND dayBooked = '$dateToday'
+       AND bookedFrom = '$bookedFrom'
+       AND bookedTo = '$bookedTo' ");  
+    $stmt->execute();
+        header("Refresh:0");
+}
     ?>
 </div>
 </div>

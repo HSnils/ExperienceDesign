@@ -41,7 +41,7 @@
 
 	</div>
 	<div class="findroombox">
-    <h2>Avalible rooms</h2>
+    <h2>Available rooms</h2>
     <?php echo $dateToday; ?>
     <table>
         <thead>
@@ -123,7 +123,7 @@
 
 
     <div class="linkbox" id="reserveBox">
-        <a class="btn" id="reservebutton">RESERVE FUTURE </a>
+        <a class="btn" id="reservebutton">Book another date</a>
     </div>
 	</div>
     <script type="text/javascript">

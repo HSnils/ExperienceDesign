@@ -48,6 +48,10 @@ h1 {
 
 /* layout */
 
+#login {
+    margin-top: 200px;
+}
+
 #map {
     margin: 0 auto;
     width: 100%;

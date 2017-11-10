@@ -40,7 +40,7 @@
         <div id="main">
             <div class="container">
                 <h1>Group room Booking</h1>
-                <form action="login.php" method="post">
+                <form action="login.php" method="post" id="login">
                     <?php
 					if(isset($error)){?>
                     <div>

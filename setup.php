@@ -54,6 +54,7 @@ $query =
 		dayBooked DATE,
 		bookedFrom varchar(5),
 		username varchar(30),
+        isThere boolean NOT NULL,
 
 		CONSTRAINT `FK_roomName` FOREIGN KEY (`roomName`) 
 		REFERENCES `rooms`(`roomName`) 

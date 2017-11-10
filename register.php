@@ -69,8 +69,7 @@ if(isset($_POST['submit'])){
 			<div id="passError"></div>
 
 			<br>
-
-			<label for="regSubmit" hidden> Submit </label> 
+			
 			<input class="buttonclass" id="regSubmit" type="submit" name="submit" value="Create account">
 		</form>
 	</div>

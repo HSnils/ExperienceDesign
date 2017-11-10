@@ -8,7 +8,7 @@
 
 //booking of rooms
     if(isset($_POST['submit'])){
-        
+
         //Puts username into variables for use in SQL statement
         $dayBooked =htmlentities($_POST['date']);
         $timeFrom = htmlentities($_POST['timeFrom']);
@@ -25,10 +25,10 @@
         ");
 
         $stmt->execute();
-        
+
         //redirects user to homepage
         $user->redirect('index.php');
-       
+
     }
 
     //htmlhead
@@ -48,7 +48,7 @@
         </thead>
         <tbody>
             <?php
-			//gets all rooms 
+			//gets all rooms
 			/*$stmt = $db->prepare("
 				SELECT *
 				FROM rooms
@@ -56,7 +56,7 @@
 			$stmt->execute();
 			$numRows = $stmt->rowCount();*/
 			$timeNow = date("H").":00";
-			//gets all unbooked rooms 
+			//gets all unbooked rooms
 			$stmt = $db->prepare("
 				SELECT *
 				FROM   rooms
@@ -67,7 +67,7 @@
 				   AND dayBooked = '$dateToday'
 				   AND bookedFrom <= '$timeNow'
 				   AND bookedTo >= '$timeNow');
-				
+
 				");
 			$stmt->execute();
 			$numRows = $stmt->rowCount();
@@ -81,11 +81,11 @@
 					echo '
 
 					<tr>
-						<td class="roomDistance"> 10m </td>
+						<td class="roomDistance"> - </td>
 						<td class="roomId"><b>'.$row['building'] . $row['room'].'</b></td>
                                 <td><a href="room.php?id='.$row['building'] . $row['room'].'" class="icon goTo"></a></td>
 					</tr>';
-					
+
 				}
 			}
 		?>

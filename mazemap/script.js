@@ -42,7 +42,7 @@ map.on('load', function() {
   var blueDot = new Mazemap.BlueDot({
     zLevel: 1,
     accuracyCircle: true,
-  }).setLngLat(lnglatPos).setAccuracy(15);
+  }).setLngLat(lnglatPos).setAccuracy(3);
 
   // Get user location
   function getLocation() {

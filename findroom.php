@@ -99,10 +99,10 @@
             <input type="date" name="date" id="date" value="" required >
 
             <label for="timeFrom">From</label>
-            <input id="timeFrom" type="text" value="" name="timeFrom" required max="5" min="5" placeholder="hh:mm">
+            <input class="picker" id="timeFrom" type="text" value="" name="timeFrom" required max="5" min="5" placeholder="hh:mm">
 
             <label for="timeTo">To</label>
-            <input id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
+            <input class="picker" id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
 
             <label for="building">Building</label>
             <select id="buildingSelect" name="buildingSelect" required>
@@ -133,19 +133,21 @@
         }
 
     	$('#reservebutton').click(function(){
-			
 			$('#reserveBox').hide();
-			
 			$('#reserve').toggle("slide", {direction: 'down'})
 		});
 
 		$('#X').click(function(){
 			$('#reserve').toggle("slide", {direction: 'down'})
-
 			$('#reserveBox').fadeIn(1000);
-			
-			
 		});
+        $('.picker').timepicker({
+            'timeFormat':'H:i',
+            'minTime': '10:00',
+            'maxTime': '21:00',
+            'forceRoundTime':true,
+            'step':60
+        });
     </script>
     <script type="text/javascript" src="mazemap/script.js"></script>
     </body>

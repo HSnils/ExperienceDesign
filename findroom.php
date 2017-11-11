@@ -117,7 +117,7 @@
             <label for="room">Room</label>
             <select name="room" id="room" required></select>
 
-            <label for="regSubmit" hidden> RESERVE </label>
+            <label for="regSubmit" hidden>Reserve</label>
             <input class="buttonclass" id="resSubmit" type="submit" name="submit" value="RESERVE">
         </form>
     </div>

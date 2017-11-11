@@ -34,16 +34,18 @@ nav a {
     text-decoration: none;
     color: #3498db;
     font-size: 0.7em;
+    font-weight: bold;
 }
 
 nav a#logo {
     font-size: 1.5em;
+    font-weight: normal;
 }
 
 /* typography */
 
-h1 {
-    text-align: center;
+h2 {
+    margin: 0 5px;
 }
 
 /* layout */
@@ -190,7 +192,6 @@ select {
 .linkbutton {}
 
 .btn {
-    width: 100%;
     background-color: #3498db;
     color: white;
     border-radius: 50px;
@@ -199,6 +200,8 @@ select {
     box-sizing: border-box;
     padding: 10px 20px;
     cursor: pointer;
+    width: auto !important;
+    min-width: 200px;
 }
 
 .btn:hover {

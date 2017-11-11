@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
 
 			<br>
 			
-			<input class="buttonclass" id="regSubmit" type="submit" name="submit" value="Create account">
+			<input class="btn" id="regSubmit" type="submit" name="submit" value="Create account">
 		</form>
 	</div>
 	</div>

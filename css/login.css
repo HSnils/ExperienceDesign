@@ -1,3 +1,7 @@
+html {
+    border-top: 3px solid #3498db;
+}
+
 body {
     margin: 0 auto;
     padding: 0;
@@ -6,22 +10,20 @@ body {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     font-size: 3em;
     color: #3498db;
 }
 
 #main {
-    margin-top: 5%;
     width: 100%;
     box-sizing: border-box;
     max-width: 900px;
     background-image: url(../img/Group%2014.png);
     background-size: contain;
-    background-position: top;
+    background-position: 0 -25%;
     background-repeat: no-repeat;
     margin: 0 auto;
-
 }
 
 .container {
@@ -49,6 +51,6 @@ h1 {
 }
 
 label {
-    margin-top: 40px;
     display: block;
+    margin-top: 20px;
 }

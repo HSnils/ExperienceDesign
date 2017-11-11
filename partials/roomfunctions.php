@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
             $btnValue = 'Check in';
             $btnName = 'checkinSub';
     } elseif($check['isThere'] == 1 && $check['username'] == $userID) {
-            $btnValue = 'You have checked in';
+            $btnValue = 'You are checked in';
             $btnName = 'submit';
             $btnDisabled = 'disabled';
     } elseif($check['isThere'] == 1) {

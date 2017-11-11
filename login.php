@@ -1,7 +1,7 @@
 <?php
 	require_once 'connect.php';
 	
-	//redirects user to index if allready logged in
+	// redirects user to index if already logged in
 	if($user->is_loggedin()!=""){
 		$user->redirect('index.php');
 	}
@@ -41,19 +41,13 @@
             <div class="container">
                 <h1>Group room Booking</h1>
                 <form action="login.php" method="post" id="login">
-                    <?php
-					if(isset($error)){?>
-                    <div>
-                        &nbsp;
-                        <?php echo $error; ?> !
-                    </div>
-                    <?php
-					}
-				?>
-                    <label for="username">USERNAME</label>
-                    <input type="text" name="username" id="username" value="" required>
-                    <label for="pass">PASSWORD</label>
-                    <input type="password" name="pw" id="pass" value="" required>
+                   <div><?php if(isset($error)) { echo $error; }?><div>
+                   
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" value="" placeholder="username" required>
+                    
+                    <label for="pass">Password</label>
+                    <input type="password" name="pw" id="pass" value="" placeholder="password" required>
 
                     <!--Log in and register buttons -->
 					<input class="btn" type="submit" name="submit" value="SIGN IN">
@@ -63,7 +57,6 @@
                 <div id="error"></div>
             </div>
         </div>
-
 
         <script>
             //redirects to Register.php on click on register button

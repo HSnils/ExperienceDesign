@@ -1,7 +1,28 @@
 <?php 
 require_once('partials/phphead.php');
 require_once('partials/header.php');
-require('partials/roomfunctions.php');
+require_once('partials/roomfunctions.php');
+?>
+<?php
+$roomID = $_GET['id'];
+//gets the room
+$stmt = $db->prepare("
+	SELECT *
+	FROM rooms
+	WHERE roomName = '$roomID'");
+$stmt->execute();
+$room = $stmt->fetch(PDO::FETCH_ASSOC);
+// printf($row['Building']);
+
+// get all bookings
+$stmt = $db->prepare("
+	SELECT *
+	FROM bookings
+	WHERE roomName = '$roomID'
+    AND dayBooked = '$dateToday'");
+$stmt->execute();
+
+$numRows = $stmt->rowCount();
 ?>
 
 <div id="map" class="mazemap">

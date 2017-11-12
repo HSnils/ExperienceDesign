@@ -42,7 +42,7 @@ map.on('load', function() {
   var blueDot = new Mazemap.BlueDot({
     zLevel: 1,
     accuracyCircle: true,
-  }).setLngLat(lnglatPos).setAccuracy(3);
+  }).setLngLat(lnglatPos).setAccuracy(10);
 
   // Get user location
   function getLocation() {
@@ -95,51 +95,17 @@ map.on('load', function() {
         });
       }
       deferred.done(function() {
-        console.log("deff done");
         jQuery.fn.sortDivs = function sortDivs() {
           $("tr", this[0]).sort(dec_sort).appendTo(this[0]);
           function dec_sort(a, b){ return ($(b).attr("distance")) > ($(a).attr("distance")) ? -1 : ($(b).attr("distance")) < ($(a).attr("distance")) ? 1 : -1; }
         }
         $('tbody').sortDivs();
-
-        /*
-        $('tbody tr').sort(function (a, b) {
-           var contentA =parseInt( $(a).attr('distance'));
-           var contentB =parseInt( $(b).attr('distance'));
-           console.log("a: " + contentA + " b: " + contentB);
-           return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : -1;
-        });
-        */
       });
     }
   }
 
   getLocation();
-
-  map.on('click', function(e) {
-    onMapClick(e);
-    // blueDot.setLngLat(e.lngLat);
-  });
 });
-
-// define a global
-
-
-function onMapClick(e) {
-  // Clear existing, if any
-  clearPoiMarker();
-
-  var lngLat = e.lngLat;
-  var zLevel = map.zLevel;
-
-  // Fetching via Data API
-  Mazemap.Data.getPoiAt(lngLat, zLevel).then(poi => {
-    placePoiMarker(poi);
-  }).catch(function() {return false;});
-
-
-  console.log(posOverlap(lngLat, lnglatPos));
-}
 
 function clearPoiMarker(poi) {
   if (mazeMarker) {
@@ -167,19 +133,11 @@ function posOverlap(a,b) {
 
   var dist = d;
   return dist;
-
-  /*
-  if (d > 20) {
-    console.log("Mer enn 20m fra rom");
-  }
-  */
 }
 
 
 function placePoiMarker(poi) {
   // Remove marker if exists
-
-  console.log(poi);
   clearPoiMarker();
 
   // Get a center point for the POI, because the data can return a polygon instead of just a point sometimes
@@ -195,23 +153,6 @@ function placePoiMarker(poi) {
     map.setZLevel(poi.properties.zLevel);
   }, 150);
 }
-
-/*
-$.get("https://api.mazemap.com/api/pois/?campusid=55&srid=4326").done(function(data) {
-  var len = data.pois.length;
-  for (i = 0; i < len; i++) {
-    var poiId = data.pois[i].poiId;
-    Mazemap.Data.getPoi(poiId).then( poi => {
-      // Room id
-      console.log(poi.properties.id);
-
-      // Room building + name (ex. 502-K114)
-      console.log(poi.properties.identifier);
-    });
-  }
-});
-*/
-
 
 // Highlight room on map on button click
 var searchRoom = new Mazemap.Search.SearchController({

@@ -41,7 +41,7 @@ $numRows = $stmt->rowCount();
             </p>
         </div>
         <div class="details-element">
-            <p><strong>equipment</strong>
+            <p><strong>Equipment</strong>
                 <span><?php echo $room['equipment'] ?></span>
             </p>
         </div>
@@ -88,7 +88,7 @@ $numRows = $stmt->rowCount();
                     header("Refresh:0");
             }
         ?>
-            <form action="" method="post">
+            <form action="" method="post" class="bookingbtn">
                 <input type="submit" class="btn <?= $btnDisabled ?>" name="<?= $btnName; ?>" value="<?= $btnValue; ?>" <?= $btnDisabled ?>>
             </form>
 

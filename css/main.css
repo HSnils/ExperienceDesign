@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
     max-width: 700px;
     font-family: "roboto", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: .05em;
     color: #3498db;
 }
@@ -192,6 +192,7 @@ select {
 .linkbutton {}
 
 .btn {
+    display: block;
     background-color: #3498db;
     color: white;
     border-radius: 50px;

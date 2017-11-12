@@ -7,6 +7,7 @@ Experience Design assignment 3
 2. Start 'setup.php' on local server or online server
 3. Go to 'login.php'
 4. Some users have already been added, feel free to register your own
+5. Make sure you are connected using HTTPS, otherwise geolocation services will not work
 
 # Features
 * Register account

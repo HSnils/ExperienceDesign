@@ -106,8 +106,8 @@
             <input class="picker" id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
 
             <label for="building">Building</label>
-            <select class="building" id="buildingSelect" name="buildingSelect" required>
-            	<option value="">Choose building</option>
+            <select class="building" id="buildingSelect" name="buildingSelect" onchange="showRoom(this.value)" required>
+            	<option value="">Select building</option>
 				<option value="A">Building A</option>
 				<option value="B">Building B</option>
 				<option value="G">Building G</option>

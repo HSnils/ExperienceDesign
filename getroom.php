@@ -9,6 +9,6 @@ $stmt = $db->prepare("
 $stmt->execute();
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     //echo "<option>" . $row['roomName'] . "</option>";
-    echo '<option>' . $row['roomName'] . '</option>';
+    echo '<option>' . $row['room'] . '</option>';
 }
 ?>

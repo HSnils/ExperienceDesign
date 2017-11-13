@@ -100,10 +100,10 @@
             <input type="date" name="date" id="date" value="" required >
 
             <label for="timeFrom">From</label>
-            <input class="picker" id="timeFrom" type="text" value="" name="timeFrom" required max="5" min="5" placeholder="hh:mm">
+            <input class="picker" id="timeFrom" type="time" value="" name="timeFrom" required max="5" min="5" placeholder="hh:mm">
 
             <label for="timeTo">To</label>
-            <input class="picker" id="timeTo" type="text" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
+            <input class="picker" id="timeTo" type="time" value="" name="timeTo" required max="5" min="5" placeholder="hh:mm">
 
             <label for="building">Building</label>
             <select class="building" id="buildingSelect" name="buildingSelect" onchange="showRoom(this.value)" required>

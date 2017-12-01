@@ -52,10 +52,11 @@
 <body>
     <header>
         <nav>
-            <a id="logout" href="logout.php?logout=true">LOG OUT</a>
-            <a id="logo" href="index.php">NTNU booking</a>
-            <a id="profile" href="index.php">
-                <?php echo $printableUsername ?>
-            </a>
+            <element id="goBack" onclick="goBack()">&larr;</element>
+            <a id="logo" href="index.php">&#127968;</a>
+			<a id="logout" href="logout.php?logout=true">LOG OUT</a>
         </nav>
     </header>
+    <script>function goBack() {
+	    window.history.back();
+	}</script>

@@ -41,7 +41,10 @@
 
 	</div>
 	<div class="findroombox">
-    <h2>Available rooms</h2>
+        <div class="linkbox" id="reserveBox">
+        <a class="btn" id="reservebutton">Book another date</a>
+    </div>
+    <h2>Available rooms today</h2>
     <table>
         <thead>
 
@@ -123,9 +126,7 @@
     </div>
 
 
-    <div class="linkbox" id="reserveBox">
-        <a class="btn" id="reservebutton">Book another date</a>
-    </div>
+    
 	</div>
     <script type="text/javascript">
 
